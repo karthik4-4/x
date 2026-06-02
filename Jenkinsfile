@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+        stage ('checkout') {
+            step {
+                checkout scm
+            }
+        }
+
+        stage('Hello') {
+            steps {
+                echo "Hello world"
+                sh "pwd"
+            }
+        }
+    }
+}
